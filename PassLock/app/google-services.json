@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "592222358327",
+    "project_id": "paock-882df",
+    "storage_bucket": "paock-882df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592222358327:android:b5f638e185e54bad3568b2",
+        "android_client_info": {
+          "package_name": "pl.denys.karol.passlock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592222358327-mo8d15rt44d5ma2sqrsvd106ci4bj1f3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.denys.karol.passlock",
+            "certificate_hash": "f4b5b00f6c8c641802388f973d1cfd9e4f77a3be"
+          }
+        },
+        {
+          "client_id": "592222358327-8guv4prhsec43agda7i35n2m52uacuvg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD68nLhPoCX23Wv52VuM272fPCZ5kSRPFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592222358327-8guv4prhsec43agda7i35n2m52uacuvg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
