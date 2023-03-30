@@ -37,7 +37,7 @@ class SignInFragment : Fragment() {
         }
         binding.forgetPassBtn.setOnClickListener {
             view.findNavController().navigate(
-                SignInFragmentDirections.actionSignInFragmentToHostFragment()
+                SignInFragmentDirections.actionSignInFragmentToForgotPasswordFragment()
             )
         }
     }
