@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="third_floating_button">Third Floating Button</string>
+    <string name="FireBase">FireBase</string>
+    <string name="ROOM">Room</string>
+    <string name="add">add</string>
 </resources>

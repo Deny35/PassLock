@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="pl.denys.karol.passlock.fragments.SignUpFragment"
+        android:name="pl.denys.karol.passlock.fragmentsAuth.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -16,52 +16,26 @@
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="pl.denys.karol.passlock.fragments.SignInFragment"
+        android:name="pl.denys.karol.passlock.fragmentsAuth.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_singOutFragment"
-            app:destination="@id/singOutFragment" />
-        <action
             android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_hostFragment"
-            app:destination="@id/hostFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/singOutFragment"
-        android:name="pl.denys.karol.passlock.fragments.SingOutFragment"
-        android:label="fragment_sing_out"
-        tools:layout="@layout/fragment_sing_out" >
-        <action
-            android:id="@+id/action_singOutFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment2"
+            app:destination="@id/forgotPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="pl.denys.karol.passlock.fragments.ForgotPasswordFragment"
+        android:name="pl.denys.karol.passlock.fragmentsAuth.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_forgotPasswordInfoFragmenat"
-            app:destination="@id/forgotPasswordInfoFragmenat" />
-    </fragment>
-    <fragment
-        android:id="@+id/forgotPasswordInfoFragmenat"
-        android:name="pl.denys.karol.passlock.fragments.ForgotPasswordInfoFragmenat"
-        android:label="fragment_forgot_password_info_fragmenat"
-        tools:layout="@layout/fragment_forgot_password_info_fragmenat" >
-        <action
-            android:id="@+id/action_forgotPasswordInfoFragmenat_to_signInFragment"
+            android:id="@+id/action_forgotPasswordFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/hostFragment"
-        android:name="pl.denys.karol.passlock.fragments.HostFragment"
-        android:label="fragment_host"
-        tools:layout="@layout/fragment_host" />
 </navigation>

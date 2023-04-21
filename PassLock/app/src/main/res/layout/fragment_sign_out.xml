@@ -4,20 +4,20 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context=".fragments.SingOutFragment">
+tools:context=".fragmentsHome.SignOutFragment">
 
-<Button
+    <Button
         android:id="@+id/signOutBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/light_sky"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="323dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="64dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
