@@ -12,22 +12,32 @@ class FirebaseRepositoryImplementation(
     val storageReference: StorageReference
 ) : FirebaseRepository{
     override fun addPassword(account: Account, result: (UiState<Pair<Account, String>>) -> Unit) {
-        val document = database.collection("user").document(account.user_id).collection("pass").document()
-        account.id = document.id
-        document
-            .set(account)
-            .addOnSuccessListener {
-                result.invoke(
-                    UiState.Success(Pair(account,"Password has been created successfully"))
-                )
-            }
-            .addOnFailureListener {
-                result.invoke(
-                    UiState.Failure(
-                        it.localizedMessage
+        if (account.password != "") {
+            val document =
+                database.collection("user").document(account.user_id).collection("pass").document()
+            account.id = document.id
+            document
+                .set(account)
+                .addOnSuccessListener {
+                    result.invoke(
+                        UiState.Success(Pair(account, "Password has been created successfully"))
                     )
+                }
+                .addOnFailureListener {
+                    result.invoke(
+                        UiState.Failure(
+                            it.localizedMessage
+                        )
+                    )
+                }
+        }
+        else{
+            result.invoke(
+                UiState.Failure(
+                    "Failed")
                 )
-            }
+        }
+
     }
     override fun getAcount(userId: String, result: (UiState<List<Account>>) -> Unit) {
         database.collection("user").document(userId).collection("pass")
@@ -61,4 +71,23 @@ class FirebaseRepositoryImplementation(
                 result.invoke(UiState.Failure(e.message))
             }
     }
+
+    override fun updateAccount(account: Account, result: (UiState<Pair<Account, String>>) -> Unit) {
+
+        database.collection("user").document(account.user_id).collection("pass").document(account.id)
+       .set(account)
+            .addOnSuccessListener {
+                result.invoke(
+                    UiState.Success(Pair(account, "Password has been created successfully"))
+                )
+            }
+            .addOnFailureListener {
+                result.invoke(
+                    UiState.Failure(
+                        it.localizedMessage
+                    )
+                )
+            }
+    }
+
 }

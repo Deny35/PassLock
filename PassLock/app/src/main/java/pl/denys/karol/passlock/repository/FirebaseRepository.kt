@@ -8,5 +8,5 @@ interface FirebaseRepository {
     fun addPassword(account: Account, result: (UiState<Pair<Account, String>>) -> Unit)
     fun getAcount(userId: String, result: (UiState<List<Account>>) -> Unit)
     fun deleteAccount(account: Account, result: (UiState<String>) -> Unit)
-
+    fun updateAccount(account: Account, result: (UiState<Pair<Account,String>>) -> Unit)
 }

@@ -9,10 +9,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import pl.denys.karol.passlock.repository.AuthRepository
-import pl.denys.karol.passlock.repository.AuthRepositoryImplementation
-import pl.denys.karol.passlock.repository.FirebaseRepository
-import pl.denys.karol.passlock.repository.FirebaseRepositoryImplementation
+import pl.denys.karol.passlock.repository.*
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -37,4 +34,12 @@ object RepositoryModule {
     ): FirebaseRepository {
         return FirebaseRepositoryImplementation(database, storageReference)
     }
+
+    @Provides
+    @Singleton
+    fun provideCryptRepository(
+    ): CryptRepository {
+        return CryptRepositoryImplementation()
+    }
+
 }

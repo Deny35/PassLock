@@ -50,6 +50,20 @@ class SignUpFragment : Fragment() {
                     view.findNavController()
                         .navigate(SignUpFragmentDirections.actionSignUpFragmentToSignInFragment())
                 }
+                if (state is UiState.Loading){
+                    binding.progress.visibility = View.VISIBLE
+                    binding.buttonSignup.setText("")
+                }
+                if (state is UiState.Failure){
+                    Toast.makeText(
+                        context,
+                        state.error,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    binding.progress.visibility = View.INVISIBLE
+                    binding.buttonSignup.setText("Sign In")
+
+                }
             }
 
         } else{

@@ -28,6 +28,10 @@ class FirebaseViewModel @Inject constructor(
     val deleteAccount: LiveData<UiState<String>>
         get() = _deleteAccount
 
+    private val _updateAccount = MutableLiveData<UiState<Pair<Account,String>>>()
+    val updateAccount: LiveData<UiState<Pair<Account,String>>>
+        get() = _updateAccount
+
     fun addAccount(accounr :Account){
         _addAccount.value = UiState.Loading
         repository.addPassword(accounr) { _addAccount.value = it }
@@ -41,6 +45,11 @@ class FirebaseViewModel @Inject constructor(
     fun deleteAccount(note: Account){
         _deleteAccount.value = UiState.Loading
         repository.deleteAccount(note) { _deleteAccount.value = it }
+    }
+
+    fun updateAccount(accounr :Account){
+        _updateAccount.value = UiState.Loading
+        repository.updateAccount(accounr) { _updateAccount.value = it }
     }
 }
 

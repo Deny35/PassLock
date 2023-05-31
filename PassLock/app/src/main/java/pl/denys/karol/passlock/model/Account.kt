@@ -4,6 +4,7 @@ package pl.denys.karol.passlock.model
 import android.os.Parcelable
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import java.time.LocalTime
 
 @Parcelize
 data class Account(
@@ -15,5 +16,7 @@ data class Account(
     val password: String = "",
     val website: String = "",
     val description: String = "",
+    val timeH: Int = 0,
+    val timeM: Int = 0,
     val type: String = ""
 ): Parcelable

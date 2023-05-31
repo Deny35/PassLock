@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.codingstuff.loginsignupmvvm.viewmodel.AuthViewModel
@@ -44,6 +45,20 @@ class ForgotPasswordFragment : Fragment() {
                 if (state is UiState.Success) {
                     view.findNavController().navigate(
                         ForgotPasswordFragmentDirections.actionForgotPasswordFragmentToSignInFragment())
+                }
+                if (state is UiState.Loading){
+                    binding.progress.visibility = View.VISIBLE
+                    binding.ForgotPasswordButton.setText("")
+                }
+                if (state is UiState.Failure){
+                    Toast.makeText(
+                        context,
+                        state.error,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    binding.progress.visibility = View.INVISIBLE
+                    binding.ForgotPasswordButton.setText("Sign In")
+
                 }
             }
 

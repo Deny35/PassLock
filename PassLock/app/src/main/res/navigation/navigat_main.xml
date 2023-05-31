@@ -16,8 +16,15 @@
             android:id="@+id/action_passwordListFragment_to_passwordDetailFragment"
             app:destination="@id/passwordDetailFragment" />
         <action
-            android:id="@+id/action_passwordListFragment_to_passwordDetailFragment2"
-            app:destination="@id/passwordDetailFragment" />
+            android:id="@+id/action_passwordListFragment_to_addRoomPasswordFragment"
+            app:destination="@id/addRoomPasswordFragment" />
+        <action
+            android:id="@+id/action_passwordListFragment_to_roomPasswordDetailFragment"
+            app:destination="@id/roomPasswordDetailFragment" >
+            <argument
+                android:name="id"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/accountSettingsFragment"
@@ -26,9 +33,22 @@
         tools:layout="@layout/fragment_account_settings" />
     <fragment
         android:id="@+id/cardFragment"
-        android:name="pl.denys.karol.passlock.fragmentsHome.CardFragment"
+        android:name="pl.denys.karol.passlock.CardFragments.CardFragment"
         android:label="fragment_card"
-        tools:layout="@layout/fragment_card" />
+        tools:layout="@layout/fragment_card" >
+        <action
+            android:id="@+id/action_cardFragment_to_addCardFragment"
+            app:destination="@id/addCardFragment" >
+
+        </action>
+        <action
+            android:id="@+id/action_cardFragment_to_cardDetailFragment"
+            app:destination="@id/cardDetailFragment" >
+            <argument
+                android:name="id"
+                app:argType="integer" />
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/addPasswordFragment"
         android:name="pl.denys.karol.passlock.fragmentsHome.AddPasswordFragment"
@@ -46,7 +66,45 @@
             android:name="account"
             app:argType="pl.denys.karol.passlock.model.Account" />
         <action
-            android:id="@+id/action_passwordDetailFragment_to_passwordListFragment2"
+            android:id="@+id/action_passwordDetailFragment_to_passwordListFragment"
             app:destination="@id/passwordListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="pl.denys.karol.passlock.CardFragments.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" >
+        <action
+            android:id="@+id/action_addCardFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRoomPasswordFragment"
+        android:name="pl.denys.karol.passlock.fragmentsHome.FragmentsPasswordROOM.AddRoomPasswordFragment"
+        android:label="fragment_add_room_password"
+        tools:layout="@layout/fragment_add_room_password" >
+        <action
+            android:id="@+id/action_addRoomPasswordFragment_to_passwordListFragment"
+            app:destination="@id/passwordListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomPasswordDetailFragment"
+        android:name="pl.denys.karol.passlock.fragmentsHome.FragmentsPasswordROOM.RoomPasswordDetailFragment"
+        android:label="fragment_room_password_detail"
+        tools:layout="@layout/fragment_room_password_detail" >
+        <action
+            android:id="@+id/action_roomPasswordDetailFragment_to_passwordListFragment"
+            app:destination="@id/passwordListFragment" >
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/cardDetailFragment"
+        android:name="pl.denys.karol.passlock.CardFragments.CardDetailFragment"
+        android:label="fragment_card_detail"
+        tools:layout="@layout/fragment_card_detail" >
+        <action
+            android:id="@+id/action_cardDetailFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
     </fragment>
 </navigation>
